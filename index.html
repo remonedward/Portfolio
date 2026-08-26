@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remon Aziz (Remo_ox) — Python & Agentic AI Developer</title>
+<meta name="description" content="Freelance Python developer specializing in Agentic AI, RAG systems, business automation, desktop applications and data analysis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f17; --bg2:#111827; --card:#151c2b; --border:#23304a;
+  --text:#e7edf7; --muted:#93a1bb; --accent:#4f8cff; --accent2:#22d3a5;
+  --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6}
+body[lang="ar"]{font-family:'Cairo',sans-serif}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(11,15,23,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;font-size:18px;color:var(--text);text-decoration:none}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.lang-btn{background:var(--card);border:1px solid var(--border);color:var(--text);padding:6px 14px;border-radius:20px;cursor:pointer;font-weight:700;font-size:13px;transition:.2s}
+.lang-btn:hover{border-color:var(--accent);color:var(--accent)}
+#menu-btn{display:none;background:none;border:none;color:var(--text);font-size:24px;cursor:pointer}
+
+/* HERO */
+header{padding:96px 0 72px;text-align:center;
+  background:radial-gradient(600px 300px at 50% 0%,rgba(79,140,255,.14),transparent),var(--bg)}
+.badge{display:inline-block;background:rgba(34,211,165,.12);color:var(--accent2);border:1px solid rgba(34,211,165,.3);
+  padding:6px 16px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:22px}
+h1{font-size:clamp(32px,5vw,54px);font-weight:800;line-height:1.15;margin-bottom:18px}
+h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{color:var(--muted);max-width:640px;margin:0 auto 32px;font-size:clamp(15px,2vw,19px)}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:12px;font-weight:700;text-decoration:none;font-size:15px;transition:.2s}
+.btn-primary{background:linear-gradient(90deg,var(--accent),#3b6fd9);color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(79,140,255,.35)}
+.btn-outline{border:1px solid var(--border);color:var(--text);background:var(--card)}
+.btn-outline:hover{border-color:var(--accent);transform:translateY(-2px)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-top:56px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
+.stat b{display:block;font-size:26px;color:var(--accent)}
+.stat span{color:var(--muted);font-size:13px}
+
+section{padding:72px 0}
+.section-title{text-align:center;margin-bottom:44px}
+.section-title h2{font-size:clamp(24px,3.5vw,34px);font-weight:800}
+.section-title p{color:var(--muted);margin-top:8px}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:.25s}
+.skill-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.skill-card .icon{font-size:30px;margin-bottom:12px;display:block}
+.skill-card h3{font-size:17px;margin-bottom:8px}
+.skill-card p{color:var(--muted);font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:44px;justify-content:center}
+.tag{background:var(--bg2);border:1px solid var(--border);color:var(--muted);padding:7px 16px;border-radius:20px;font-size:13px;font-weight:600}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.project{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.project:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.proj-top{padding:22px 22px 0;display:flex;justify-content:space-between;align-items:flex-start}
+.proj-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;background:linear-gradient(135deg,rgba(79,140,255,.18),rgba(34,211,165,.18))}
+.gh-link{color:var(--muted);transition:.2s}
+.gh-link:hover{color:var(--text)}
+.proj-body{padding:14px 22px 20px;flex:1}
+.proj-body h3{font-size:17px;margin-bottom:6px}
+.proj-body p{color:var(--muted);font-size:14px}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;padding:0 22px 18px}
+.mini-tag{background:var(--bg2);border:1px solid var(--border);color:var(--muted);font-size:11px;padding:3px 10px;border-radius:12px;font-weight:600}
+
+/* CERTS */
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.cert{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;text-decoration:none;color:var(--text);display:block;transition:.25s}
+.cert:hover{transform:translateY(-4px);border-color:var(--accent2);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.cert .icon{font-size:26px;display:block;margin-bottom:10px}
+.cert h3{font-size:15px;margin-bottom:4px}
+.cert p{color:var(--muted);font-size:13px;margin-bottom:12px}
+.cert .view{color:var(--accent);font-size:13px;font-weight:700}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.service{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--border);border-radius:var(--radius);padding:26px;transition:.25s}
+.service:hover{border-color:var(--accent2)}
+.service .icon{font-size:28px;display:block;margin-bottom:12px}
+.service h3{font-size:16px;margin-bottom:8px}
+.service p{color:var(--muted);font-size:14px}
+
+/* CONTACT */
+.contact-box{background:linear-gradient(135deg,rgba(79,140,255,.08),rgba(34,211,165,.06));
+  border:1px solid var(--border);border-radius:20px;padding:52px 28px;text-align:center}
+.contact-box h2{font-size:clamp(24px,3.5vw,32px);margin-bottom:10px}
+.contact-box>p{color:var(--muted);margin-bottom:30px;max-width:520px;margin-inline:auto}
+.contact-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.contact-item{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);
+  padding:12px 20px;border-radius:12px;color:var(--text);text-decoration:none;font-weight:600;font-size:14px;transition:.2s}
+.contact-item:hover{border-color:var(--accent);transform:translateY(-2px)}
+
+footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
+footer a{color:var(--accent);text-decoration:none}
+
+@media(max-width:720px){
+  #menu-btn{display:block}
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg2);
+    flex-direction:column;padding:20px;gap:16px;border-bottom:1px solid var(--border)}
+  .nav-links.open{display:flex}
+  header{padding:64px 0 48px}
+}
+</style>
+</head>
+<body lang="en">
+
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#">Remo<span>_ox</span></a>
+    <button id="menu-btn" aria-label="Menu">☰</button>
+    <div class="nav-links" id="nav-links">
+      <a href="#skills" data-i18n="nav_skills">Skills</a>
+      <a href="#projects" data-i18n="nav_projects">Projects</a>
+      <a href="#certificates" data-i18n="nav_certs">Certificates</a>
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <button class="lang-btn" id="lang-toggle">العربية 🇪🇬</button>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="container">
+    <span class="badge" data-i18n="badge">● Available for freelance work</span>
+    <h1><span data-i18n="hero_hi">Hi, I'm Remon Aziz</span> —<br><span class="grad" data-i18n="hero_role">I build AI agents & smart business tools</span></h1>
+    <p class="subtitle" data-i18n="hero_sub">Python developer specializing in Agentic AI, RAG systems, workflow automation, and desktop/mobile applications that solve real business problems.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-primary" data-i18n="cta_hire">Hire Me</a>
+      <a href="#projects" class="btn btn-outline" data-i18n="cta_work">View My Work ↓</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>16+</b><span data-i18n="st_projects">Public projects</span></div>
+      <div class="stat"><b>4</b><span data-i18n="st_ai">AI agent systems</span></div>
+      <div class="stat"><b>5+</b><span data-i18n="st_desktop">Desktop apps shipped</span></div>
+      <div class="stat"><b>100%</b><span data-i18n="st_python">Python stack</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-title"><h2 data-i18n="sk_title">What I Do</h2><p data-i18n="sk_sub">Core areas of expertise</p></div>
+    <div class="skills-grid">
+      <div class="skill-card"><span class="icon">🤖</span><h3 data-i18n="sk1_t">Agentic AI & RAG</h3><p data-i18n="sk1_d">Autonomous sales/customer-service agents with retrieval-augmented generation, tool use, and lead collection.</p></div>
+      <div class="skill-card"><span class="icon">📊</span><h3 data-i18n="sk2_t">Data Analysis</h3><p data-i18n="sk2_d">Interactive dashboards, Excel automation, and intelligent analysis agents that turn raw data into decisions.</p></div>
+      <div class="skill-card"><span class="icon">🖥️</span><h3 data-i18n="sk3_t">Desktop Applications</h3><p data-i18n="sk3_d">Complete PyQt5 business apps — accounting, management systems — packaged as standalone .exe files.</p></div>
+      <div class="skill-card"><span class="icon">⚙️</span><h3 data-i18n="sk4_t">Workflow Automation</h3><p data-i18n="sk4_d">Scripts and bots that eliminate repetitive work: downloaders, monitors, lead pipelines, and integrations.</p></div>
+    </div>
+    <div class="tags">
+      <span class="tag">Python</span><span class="tag">LangChain / RAG</span><span class="tag">LLM Agents</span><span class="tag">PyQt5</span>
+      <span class="tag">Pandas</span><span class="tag">OpenCV</span><span class="tag">SQLite</span><span class="tag">REST APIs</span>
+      <span class="tag">yt-dlp</span><span class="tag">PyInstaller</span><span class="tag">Android (Kivy)</span><span class="tag">Git</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-title"><h2 data-i18n="pr_title">Featured Projects</h2><p data-i18n="pr_sub">Real systems built end-to-end</p></div>
+    <div class="projects-grid">
+
+      <div class="project">
+        <div class="proj-top"><span class="proj-icon">🧠</span>
+          <a class="gh-link" href="https://github.com/remonedward/Agent_RAG-CAG" target="_blank" aria-label="GitHub"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a></div>
+        <div class="proj-body"><h3>Agent_RAG-CAG</h3><p data-i18n="pr1_d">State-of-the-art customer service & sales system on Agentic AI principles — understands customer needs, showcases services, and autonomously collects leads.</p></div>
+        <div class="proj-tags"><span class="mini-tag">Python</span><span class="mini-tag">RAG</span><span class="mini-tag">Agents</span><span class="mini-tag">LLM</span></div>
+      </div>
+
+      <div class="project">
+        <div class="proj-top"><span class="proj-icon">📈</span>
+          <a class="gh-link" href="https://github.com/remonedward/Intelligent-data-analysis-agent-for-Excel-files" target="_blank" aria-label="GitHub"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a></div>
+        <div class="proj-body"><h3 data-i18n="pr2_t">Excel Data Analysis Agent</h3><p data-i18n="pr2_d">Intelligent agent that analyzes Excel files conversationally — ask questions about your data in plain language and get insights instantly.</p></div>
+        <div class="proj-tags"><span class="mini-tag">Python</span><span class="mini-tag">Pandas</span><span class="mini-tag">AI Agent</span></div>
+      </div>
+
+      <div class="project">
+        <div class="proj-top"><span class="proj-icon">💰</span>
+          <a class="gh-link" href="https://github.com/remonedward/Small-project-accounts-application" target="_blank" aria-label="GitHub"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a></div>
+        <div class="proj-body"><h3 data-i18n="pr3_t">Small-Business Accounting App</h3><p data-i18n="pr3_d">Complete desktop accounting & inventory application for small businesses — invoices, revenues, reports, Excel export — packaged as a standalone .exe.</p></div>
+        <div class="proj-tags"><span class="mini-tag">Python</span><span class="mini-tag">PyQt5</span><span class="mini-tag">SQLite</span><span class="mini-tag">PyInstaller</span></div>
+      </div>
+
+      <div class="project">
+        <div class="proj-top"><span class="proj-icon">⬇️</span>
+          <a class="gh-link" href="https://github.com/remonedward/REMO_OX-Downloader" target="_blank" aria-label="GitHub"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a></div>
+        <div class="proj-body"><h3>REMO_OX Downloader</h3><p data-i18n="pr4_d">Modern cross-platform video/audio downloader (PyQt5 + yt-dlp) with full Arabic RTL & English UI support, up to 1080p, automatic FFmpeg handling.</p></div>
+        <div class="proj-tags"><span class="mini-tag">Python</span><span class="mini-tag">PyQt5</span><span class="mini-tag">yt-dlp</span></div>
+      </div>
+
+      <div class="project">
+        <div class="proj-top"><span class="proj-icon">📊</span>
+          <a class="gh-link" href="https://github.com/remonedward/sales_dashboard_by_py" target="_blank" aria-label="GitHub"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a></div>
+        <div class="proj-body"><h3>Sales Analytics Dashboard</h3><p data-i18n="pr5_d">Interactive dashboard giving stakeholders actionable insights into sales performance — trends, KPIs, and decision-ready visualizations.</p></div>
+        <div class="proj-tags"><span class="mini-tag">Python</span><span class="mini-tag">Dashboards</span><span class="mini-tag">Analytics</span></div>
+      </div>
+
+      <div class="project">
+        <div class="proj-top"><span class="proj-icon">📱</span>
+          <a class="gh-link" href="https://github.com/remonedward/expense-manager" target="_blank" aria-label="GitHub"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a></div>
+        <div class="proj-body"><h3>Expense Manager (Android)</h3><p data-i18n="pr6_d">Personal finance Android app built in Python — compiled to a working APK and tested on real devices.</p></div>
+        <div class="proj-tags"><span class="mini-tag">Python</span><span class="mini-tag">Android APK</span></div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a class="btn btn-outline" href="https://github.com/remonedward?tab=repositories" target="_blank" data-i18n="more_github">See all 16 repositories on GitHub →</a>
+    </div>
+  </div>
+</section>
+
+<section id="certificates">
+  <div class="container">
+    <div class="section-title"><h2 data-i18n="cert_title">Certificates</h2><p data-i18n="cert_sub">Verified credentials — click to open</p></div>
+    <div class="certs-grid">
+
+      <a class="cert" href="certificates/datacamp-crewai-agents.pdf" target="_blank">
+        <span class="icon">🤖</span><h3>Building AI Agents with CrewAI</h3><p>DataCamp · 2026</p><span class="view" data-i18n="cert_view">View PDF →</span></a>
+
+      <a class="cert" href="certificates/datacamp-scalable-agentic.pdf" target="_blank">
+        <span class="icon">🏗️</span><h3>Building Scalable Agentic Systems</h3><p>DataCamp · 2026</p><span class="view" data-i18n="cert_view">View PDF →</span></a>
+
+      <a class="cert" href="certificates/datacamp-hf-smolagents.pdf" target="_blank">
+        <span class="icon">🧩</span><h3>AI Agents with Hugging Face smolagents</h3><p>DataCamp</p><span class="view" data-i18n="cert_view">View PDF →</span></a>
+
+      <a class="cert" href="certificates/datacamp-google-adk.pdf" target="_blank">
+        <span class="icon">⚡</span><h3>AI Agents with Google ADK</h3><p>DataCamp</p><span class="view" data-i18n="cert_view">View PDF →</span></a>
+
+      <a class="cert" href="certificates/datacamp-huggingface.pdf" target="_blank">
+        <span class="icon">🤗</span><h3>Working with Hugging Face</h3><p>DataCamp</p><span class="view" data-i18n="cert_view">View PDF →</span></a>
+
+      <a class="cert" href="certificates/datacamp-etl-python.pdf" target="_blank">
+        <span class="icon">🔄</span><h3>ETL and ELT in Python</h3><p>DataCamp</p><span class="view" data-i18n="cert_view">View PDF →</span></a>
+
+      <a class="cert" href="certificates/satr-machine-learning.png" target="_blank">
+        <span class="icon">📊</span><h3>Machine Learning</h3><p>Satr Coding School</p><span class="view" data-i18n="cert_view">View Certificate →</span></a>
+
+      <a class="cert" href="certificates/satr-powerbi.png" target="_blank">
+        <span class="icon">📈</span><h3>Power BI 101</h3><p>Satr Coding School</p><span class="view" data-i18n="cert_view">View Certificate →</span></a>
+
+      <a class="cert" href="certificates/elmonitor-data-eng-to-ai.jpg" target="_blank">
+        <span class="icon">🛤️</span><h3>From Data Engineering to AI</h3><p>Almentor</p><span class="view" data-i18n="cert_view">View Certificate →</span></a>
+
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-title"><h2 data-i18n="sv_title">Services I Offer</h2><p data-i18n="sv_sub">Hire me for your next project</p></div>
+    <div class="services-grid">
+      <div class="service"><span class="icon">🤖</span><h3 data-i18n="sv1_t">Custom AI Agents</h3><p data-i18n="sv1_d">Sales agents, customer-support bots, or RAG assistants trained on your own documents and data.</p></div>
+      <div class="service"><span class="icon">📑</span><h3 data-i18n="sv2_t">Data & Excel Automation</h3><p data-i18n="sv2_d">Automated reports, intelligent Excel analysis, and dashboards your team can actually use.</p></div>
+      <div class="service"><span class="icon">🖥️</span><h3 data-i18n="sv3_t">Business Desktop Apps</h3><p data-i18n="sv3_d">Tailored Windows applications for accounting, inventory, or management — delivered as ready-to-run .exe.</p></div>
+      <div class="service"><span class="icon">🔧</span><h3 data-i18n="sv4_t">Automation Scripts & Bots</h3><p data-i18n="sv4_d">Anything repetitive in your workflow — I'll automate it: scraping, monitoring, file processing, integrations.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--bg2)">
+  <div class="container">
+    <div class="contact-box">
+      <h2 data-i18n="ct_title">Let's build something together</h2>
+      <p data-i18n="ct_sub">Have a project in mind? Reach out — I usually reply within a few hours.</p>
+      <div class="contact-row">
+        <a class="contact-item" href="https://wa.me/201223806761" target="_blank">💬 WhatsApp</a>
+        <a class="contact-item" href="mailto:remonedward36@gmail.com">✉️ remonedward36@gmail.com</a>
+        <a class="contact-item" href="https://linkedin.com/in/remon-aziz-7648ab95" target="_blank">🔗 LinkedIn</a>
+        <a class="contact-item" href="https://github.com/remonedward" target="_blank">🐙 GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Remon Aziz (Remo_ox) · <span data-i18n="ft_made">Built with pure HTML — no frameworks needed.</span>
+  </div>
+</footer>
+
+<script>
+const I18N = {
+ar:{
+ nav_skills:"مهاراتي", nav_projects:"مشاريعي", nav_services:"خدماتي", nav_contact:"تواصل معي", nav_certs:"الشهادات",
+ cert_title:"الشهادات", cert_sub:"شهادات موثقة — اضغط للاستعراض", cert_view:"استعراض →",
+ badge:"● متاح للعمل الحر الآن",
+ hero_hi:"أهلاً، أنا ريمون عزيز", hero_role:"أبني وكلاء ذكاء اصطناعي وأدوات أعمال ذكية",
+ hero_sub:"مطوّر بايثون متخصص في وكلاء الذكاء الاصطناعي وأنظمة RAG، أتمتة سير العمل، وتطبيقات سطح المكتب والموبايل التي تحل مشاكل أعمال حقيقية.",
+ cta_hire:"وظّفني", cta_work:"شاهد أعمالي ↓",
+ st_projects:"مشروع منشور", st_ai:"أنظمة وكلاء ذكاء", st_desktop:"تطبيق سطح مكتب", st_python:"بايثون بالكامل",
+ sk_title:"ماذا أصنع؟", sk_sub:"مجالات خبرتي الأساسية",
+ sk1_t:"وكلاء ذكاء اصطناعي و RAG", sk1_d:"وكلاء مبيعات وخدمة عملاء مستقلون بتقنية الاسترجاع المعزز للتوليد، مع جمع تلقائي للعملاء المحتملين.",
+ sk2_t:"تحليل البيانات", sk2_d:"لوحات تحكم تفاعلية، أتمتة إكسل، ووكلاء تحليل أذكي يحولون البيانات الخام إلى قرارات.",
+ sk3_t:"تطبيقات سطح المكتب", sk3_d:"تطبيقات أعمال كاملة بـ PyQt5 — محاسبة وأنظمة إدارة — تُسلَّم كملفات exe جاهزة.",
+ sk4_t:"أتمتة سير العمل", sk4_d:"سكريبتات وبوتات تقضي على الأعمال المتكررة: تنزيل، مراقبة، خطوط عملاء، وتكاملات.",
+ pr_title:"أبرز المشاريع", pr_sub:"أنظمة حقيقية مبنية بالكامل",
+ pr1_d:"نظام متطور لخدمة العملاء والمبيعات على مبادئ الذكاء الاصطناعي الوكيل — يفهم احتياجات العميل، يعرض الخدمات، ويجمع بيانات العملاء المحتملين تلقائيًا.",
+ pr2_t:"وكيل تحليل بيانات إكسل", pr2_d:"وكيل ذكي يحلل ملفات إكسل بالمحادثة — اسأل عن بياناتك بلغتك الطبيعية واحصل على النتائج فورًا.",
+ pr3_t:"برنامج حسابات للأعمال الصغيرة", pr3_d:"تطبيق سطح مكتب متكامل للمحاسبة والمخزون — فواتير وإيرادات وتقارير وتصدير إكسل — يُسلَّم كملف exe مستقل.",
+ pr4_d:"برنامج تنزيل فيديو وصوت حديث متعدد المنصات (PyQt5 + yt-dlp) بواجهة عربية وإنجليزية كاملة، حتى 1080p ومعالجة FFmpeg تلقائية.",
+ pr5_d:"لوحة تحكم تفاعلية تمنح صنّاع القرار رؤى عملية عن أداء المبيعات — اتجاهات ومؤشرات ورسوم بيانية جاهزة للقرار.",
+ pr6_d:"تطبيق أندرويد لإدارة المصروفات مبني ببايثون — تم تجميعه كـ APK يعمل واختباره على أجهزة حقيقية.",
+ more_github:"شاهد كل الـ 16 مستودعًا على GitHub ←",
+ sv_title:"خدمات أقدمها", sv_sub:"وظّفني في مشروعك القادم",
+ sv1_t:"وكلاء ذكاء اصطناعي مخصصون", sv1_d:"وكلاء مبيعات أو بوتات خدمة عملاء أو مساعدون أذكي مدربون على مستنداتك وبياناتك.",
+ sv2_t:"أتمتة البيانات والإكسل", sv2_d:"تقارير آلية وتحليل إكسل ذكي ولوحات تحكم يستخدمها فريقك فعليًا.",
+ sv3_t:"تطبيقات سطح مكتب للأعمال", sv3_d:"تطبيقات ويندوز مخصصة للمحاسبة والمخزون والإدارة — تُسلَّم كملف exe جاهز للتشغيل.",
+ sv4_t:"سكريبتات وبوتات أتمتة", sv4_d:"أي عمل متكرر في يومك سأؤتمته: تجميع بيانات، مراقبة، معالجة ملفات، وتكاملات.",
+ ct_title:"لنبنِ شيئًا معًا", ct_sub:"عندك مشروع في بالك؟ تواصل معي — أرد عادة خلال ساعات.",
+ ft_made:"مبنية بـ HTML خالص — بدون أي أطر عمل."
+}};
+let ar=false;
+document.getElementById('lang-toggle').addEventListener('click',()=>{
+  ar=!ar;
+  document.body.lang = ar?'ar':'en';
+  document.documentElement.dir = ar?'rtl':'ltr';
+  document.documentElement.lang = ar?'ar':'en';
+  document.getElementById('lang-toggle').textContent = ar?'English 🇬🇧':'العربية 🇪🇬';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    el.textContent = ar ? (I18N.ar[k]||el.textContent) : (DEFAULTS[k]||el.textContent);
+  });
+});
+const DEFAULTS={};
+document.querySelectorAll('[data-i18n]').forEach(el=>DEFAULTS[el.getAttribute('data-i18n')]=el.textContent);
+document.getElementById('menu-btn').addEventListener('click',()=>document.getElementById('nav-links').classList.toggle('open'));
+document.querySelectorAll('#nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav-links').classList.remove('open')));
+</script>
+</body>
+</html>
